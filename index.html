@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link
       rel="stylesheet"
-      href="./bootstrap/dist/css/bootstrap.min.css"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
   </head>
   <body class="d-flex justify-content-center align-items-center">
-    <div class="m-5 container w-100">
+    <div class="m-5 container w-100 ">
       <h4 class="fs-2">سبد خرید</h4>
 
       <div class="d-flex row mt-4">
@@ -54,18 +54,14 @@
             <div class="card-body">
               <h4 class="fs-5">سبد خرید</h4>
               <ul class="list-group">
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-center"
-                >
+                <li class="list-group-item d-flex justify-content-between align-items-center">
                   <span>محصول 1</span>
                   <span class="badge bg-primary rounded-circle fw_600">1</span>
                   <span class="badge rounded-pill bg-success fw_600"
                     >$45.00</span
                   ><button class="btn-close"></button>
                 </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-center"
-                >
+                <li class="list-group-item d-flex justify-content-between align-items-center">
                   <span>محصول 1</span>
                   <span class="badge bg-primary rounded-circle fw-bold">1</span>
                   <span class="badge rounded-pill bg-success fw-bold"
@@ -92,24 +88,26 @@
       </ul>
     </div>
 
-    <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       let lightBox = document.getElementById("light");
       let darkBox = document.getElementById("dark");
 
       lightBox.addEventListener("click", function () {
         document.documentElement.setAttribute("data-bs-theme", "light");
-        localStorage.setItem("theme", "light");
+        localStorage.setItem("theme","light")
+
       });
       darkBox.addEventListener("click", function () {
         document.documentElement.setAttribute("data-bs-theme", "dark");
-        localStorage.setItem("theme", "dark");
+        localStorage.setItem("theme","dark")
       });
 
-      if (localStorage.getItem("theme") === "dark") {
+      if(localStorage.getItem("theme")==="dark"){
         document.documentElement.setAttribute("data-bs-theme", "dark");
-      } else {
+      }else{
         document.documentElement.setAttribute("data-bs-theme", "light");
+
       }
     </script>
   </body>
